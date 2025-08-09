@@ -1,0 +1,505 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "montserrat";
+  color: #ffffff;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+  perspective: 800px;
+}
+
+#nav img {
+  height: 65px;
+}
+#cursor {
+  height: 25px;
+  border-radius: 50%;
+  background-color: #95c11e;
+  width: 25px;
+  position: fixed;
+  z-index: 11;
+  transition: 0.1s;
+}
+#cursor-b {
+  height: 400px;
+  border-radius: 50%;
+  background-color: #96c11e55;
+  width: 400px;
+  position: fixed;
+  z-index: 9;
+  filter: blur(50px);
+  transition: 0.1s;
+}
+#nav {
+  height: 130px;
+  width: 100%;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  padding: 0 107px;
+  gap: 45px;
+  /* background-color: black; */
+  z-index: 9999;
+}
+#nav h4 {
+  font-weight: 200;
+  font-size: 0.88rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+#nav-button {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: flex-end;
+  padding-left: 65px;
+
+  gap: 20px;
+}
+#nav-button button {
+  background-color: black;
+  border-radius: 4rem;
+  font-size: 0.88rem;
+  letter-spacing: 1px;
+  height: 45px;
+  width: 160px;
+  border: 1px solid #95c11e;
+  text-transform: uppercase;
+  font-weight: 200;
+}
+
+video {
+  position: fixed;
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+}
+#main {
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.308);
+}
+#page-1 {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-transform: uppercase;
+  text-align: center;
+  z-index: 10;
+}
+#page-1 h1 {
+  font-size: 130px;
+  font-weight: 900;
+  position: relative;
+}
+#page-1 h1::before {
+  content: "EAT.DRINK.PLAY";
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  color: black;
+  z-index: -1;
+  -webkit-text-stroke: 2px #95c11e;
+}
+
+#page-1 h2 {
+  font-size: 28px;
+  font-weight: 800;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+#page-1 p {
+  font-size: 17px;
+  font-weight: 100;
+  width: 40%;
+  text-align: center;
+}
+
+#page-2 {
+  min-height: 100vh;
+  width: 100%;
+  z-index: 10;
+  background-color: #000;
+}
+#scroller {
+  white-space: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  position: relative;
+  z-index: 10;
+}
+#scroller::-webkit-scrollbar {
+  display: none;
+}
+#scroll-in {
+  display: inline-block;
+  white-space: nowrap;
+  animation: scroll 30s 1s infinite;
+}
+#scroller h4 {
+  display: inline-block;
+  margin-right: 10px;
+  font-size: 120px;
+  font-weight: 900;
+  font-family: gilroy;
+  -webkit-text-stroke: 2px #96c11e;
+  color: transparent;
+}
+#scroller :hover {
+  color: #95c11e;
+}
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+#about-us {
+  height: 60vh;
+  width: 100%;
+  padding: 0 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: relative;
+  z-index: 10;
+}
+#about-us img {
+  height: 220px;
+  width: 220px;
+  border-radius: 40px;
+  object-fit: cover;
+}
+
+#middle-about-us {
+  text-align: center;
+  width: 50%;
+}
+#middle-about-us h2 {
+  font-size: 60px;
+  font-weight: 900;
+  margin-bottom: 30px;
+}
+
+#middle-about-us p {
+  font-size: 20px;
+  font-weight: 400;
+}
+#cards-container {
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 70px;
+  position: relative;
+  z-index: 10;
+}
+.card {
+  height: 80%;
+  width: 24%;
+  border-radius: 20px;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  /* transition: all  0.6s; */
+}
+#card1 {
+  background-image: url(https://img.freepik.com/premium-photo/autumn-majesty-cinematic-closeup-trex-orangehued-forest_1246444-83863.jpg?semt=ais_hybrid&w=740&q=80);
+}
+
+#card2 {
+  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYI1iYGThgFB-5xKJTe0QRmSJ47TGAT8zooA&s);
+}
+
+#card3 {
+  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwTwR8jivq8Rnub84QkKAyL3KcYB_CgkwMUA&s);
+}
+#overlay {
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  background-color: #95c11e;
+  padding: 40px;
+  padding-top: 100px;
+  transition: all ease 0.6s;
+}
+.card:hover #overlay {
+  opacity: 1;
+}
+.card:hover {
+  transform: rotate3d(-1, 1, 0, 20deg);
+}
+#overlay h4 {
+  font-size: 30px;
+  font-weight: 900;
+  color: #000;
+  white-space: nowrap;
+  text-transform: uppercase;
+  margin-bottom: 25px;
+}
+#overlay p {
+  font-size: 13px;
+  font-weight: 500;
+  color: #000;
+}
+#green-div {
+  height: 30vh;
+  width: 100%;
+  background: linear-gradient(to left bottom, #7bf402, #ace022);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#green-div h4 {
+  font-weight: 800;
+  line-height: 33px;
+  font-size: 27px;
+  color: #000;
+  width: 40%;
+  text-transform: uppercase;
+  text-align: center;
+  font-family: gilroy;
+}
+#green-div img {
+  width: 14%;
+  height: 100%;
+  object-fit: cover;
+}
+#food-drink {
+  height: 80vh;
+  width: 100%;
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 0 60px;
+  position: relative;
+  z-index: 10;
+}
+
+#imag-slider {
+  z-index: 99;
+  height: 60%;
+  width: 50%;
+  object-fit: cover;
+  border-radius: 20px;
+  background-size: 100% 100%;
+  animation: slide 10s linear infinite;
+  transition: all ease 2s;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+@keyframes slide {
+  0% {
+    background-image: url("https://sherohomefood.in/wp-content/uploads/2021/05/SHF_home-slide-1.jpg");
+  }
+  25% {
+    background-image: url("https://media.istockphoto.com/id/1457433817/photo/group-of-healthy-food-for-flexitarian-diet.jpg?s=612x612&w=0&k=20&c=v48RE0ZNWpMZOlSp13KdF1yFDmidorO2pZTu2Idmd3M=");
+  }
+  50% {
+    background-image: url("https://www.allrecipes.com/thmb/Pp-4RM1IlAghjBn3cYFEG7kii3g=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/140286_HomemadeDogFood_DDMFS_Beauty_009-6a6e82002dc3496eaa20dec6bfde6d6e.jpg");
+  }
+  100% {
+    background-image: url("https://sherohomefood.in/wp-content/uploads/2021/05/SHF_home-slide-1.jpg");
+  }
+}
+#food-bio {
+  text-align: start;
+  align-items: center;
+  margin-left: 50px;
+  width: 40%;
+}
+#food-bio h1 {
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 55px;
+  word-spacing: 1px;
+  white-space: nowrap;
+}
+#food-bio p {
+  font-size: 16px;
+  font-weight: 500;
+  opacity: 0.8;
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+#food-bio button {
+  height: 60px;
+  width: 180px;
+  border-radius: 4rem;
+  border: 2px solid #95c11e;
+  text-align: center;
+  font-size: 14px;
+  text-transform: uppercase;
+  background-color: #000;
+}
+
+#page-3 {
+  height: 90vh;
+  width: 100%;
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+#page-3 h4 {
+  width: 60%;
+  font-size: 33px;
+  text-align: center;
+  line-height: 40px;
+}
+#page-3 img {
+  height: 50px;
+
+  position: absolute;
+}
+#page-3 #colon-1 {
+  left: 13%;
+  top: 24%;
+}
+#page-3 #colon-2 {
+  bottom: 24%;
+  right: 13%;
+}
+#page-4 {
+  height: 30vh;
+  width: 100%;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  position: relative;
+}
+
+.elem {
+  height: 60%;
+  width: 30%;
+  overflow: hidden;
+  position: relative;
+  border-radius: 20px;
+}
+.elem h2 {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  white-space: nowrap;
+  color: #000;
+  background-color: #95c11e;
+  font-weight: 800;
+  position: absolute;
+  z-index: 10;
+  transition: all ease 0.5s;
+}
+.elem img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  scale: 1.1;
+  transition: all ease 0.5s;
+}
+#page-4 :hover h2 {
+  background-color: transparent;
+  color: #fff;
+}
+#page-4 :hover img {
+  scale: 1;
+}
+#page-4 h1 {
+  font-size: 90px;
+  -webkit-text-stroke: 1px #fff;
+  position: absolute;
+  top: -15%;
+  color: #000;
+  font-family: gilroy;
+}
+#arrow-nav {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #95c11e;
+  background-color: transparent;
+  position: absolute;
+  top: -5;
+  bottom: 0;
+  left: 0;
+  transition: all ease 0.5s;
+}
+#arrow-nav i {
+  color: #fff;
+  font-size: 40px;
+}
+#page-1 #arrow-nav:hover {
+  background-color: #95c11e;
+  scale: 0.4;
+}
+#footer {
+  height: 45vh;
+  width: 100%;
+  background: linear-gradient(to left bottom, #16bf2a, #ace022);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 60px;
+  position: relative;
+}
+#footer-text {
+  z-index: 10;
+  color: #000;
+  font-size: 30px;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+#footer-text a {
+  text-decoration: none;
+  color: #000;
+  font-size: 22px;
+  font-weight: 700;
+}
+#footer-text img {
+  height: 150px;
+  width: 150px;
+}
+#foot-back-img {
+  height: 100%;
+  width: 30%;
+  z-index: 9;
+  position: absolute;
+  object-fit: cover;
+  left: 0;
+}
+#last-footer {
+  height: 20%;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  font-weight: 100;
+  font-size: 14px;
+  padding: 10px;
+  background: linear-gradient(to left bottom, #16bf2a, #ace022);
+}
